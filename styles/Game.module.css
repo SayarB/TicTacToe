@@ -1,5 +1,4 @@
 .game_container {
- 
   aspect-ratio: 1;
   width: min(90vmin, 500px);
 
@@ -24,13 +23,43 @@
   margin: 1px;
 }
 .game_cell:hover {
-  background-color: rgb(233, 160, 233);
+  background-color: hsl(300, 62%, 77%);
+  cursor: pointer;
 }
 .cell_value {
   position: absolute;
   font-family: "Urbanist", sans-serif;
-  font-size: 8vw;
+
+  font-size: min(30vmin, 120px);
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+}
+.winner_combination {
+  background-color: hsl(125, 62%, 77%);
+}
+.winner_combination:hover {
+  background-color: hsl(125, 62%, 77%);
+}
+.announcement {
+  color: rgb(21, 228, 255);
+  text-align: center;
+
+  font-size: min(10vmin, 50px);
+  font-family: "Urbanist", sans-serif;
+}
+.winner_text {
+  position: absolute;
+  color: rgb(78, 228, 215);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.678);
+  width: 100%;
+  height: 100%;
 }
