@@ -42,6 +42,14 @@ export default function Game() {
     socket.disconnect();
   });
 
+  socket?.on("set_winner", ({ isWin, comb, winner_turn }) => {
+    if (isWin) {
+      setWinner(winner_turn);
+      setGameOver(true);
+      showWinComb(comb);
+    }
+  });
+
   const emitTurn = (pos) => {
     socket?.emit("put_turn", pos, turn);
   };
