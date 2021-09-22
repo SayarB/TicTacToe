@@ -35,6 +35,10 @@ export default function Game() {
   socket?.on("set_turn", (turnToBeAssigned) => {
     setTurn(turnToBeAssigned);
   });
+  socket?.on("set_draw", (draw) => {
+    setIsDraw(true);
+    setGameOver(true);
+  });
 
   socket?.on("update_game_state", (game_state) => set_game_state(game_state));
   socket?.on("room_full", () => {
